@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-[#fbfdfc] text-ink font-sans antialiased; background-image: radial-gradient(900px 500px at 85% -10%, #c8f5ec 0%, transparent 60%), radial-gradient(700px 400px at -5% 40%, #dbeafe66 0%, transparent 60%); background-attachment: fixed; }
+:focus-visible { outline: 3px solid #14b8a6; outline-offset: 2px; }
+
+@layer components {
+  .card { @apply rounded-3xl border border-white bg-white/80 backdrop-blur-md shadow-[0_1px_0_#fff_inset,0_18px_40px_-18px_rgba(15,60,60,.35),0_2px_6px_rgba(15,60,60,.06)]; }
+  .tilt { transition: transform .25s ease, box-shadow .25s ease; transform-style: preserve-3d; }
+  .tilt:hover { transform: perspective(900px) rotateX(4deg) rotateY(-3deg) translateY(-4px); }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-b from-brand-500 to-brand-700 px-4 py-2.5 text-sm font-semibold text-white shadow-[0_4px_0_#0a4f48,0_10px_18px_-6px_rgba(13,148,136,.6)] transition active:translate-y-[3px] active:shadow-[0_1px_0_#0a4f48] disabled:opacity-50; }
+  .btn-yellow { @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#f5c518] px-5 py-2.5 text-sm font-bold text-brand-900 shadow-[0_4px_0_#b8920a] transition active:translate-y-[3px] active:shadow-none; }
+  .card-dark { @apply rounded-3xl border border-white/10 text-white; background: radial-gradient(520px 260px at 85% -10%, rgba(45,212,191,.28), transparent 60%), radial-gradient(400px 220px at -5% 110%, rgba(251,191,36,.12), transparent 60%), linear-gradient(160deg, #06232a, #0a3a3a 70%, #0b4a44); box-shadow: 0 30px 50px -25px rgba(6,35,42,.75), inset 0 1px 0 rgba(255,255,255,.12); }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-brand-50; }
+  .btn-danger { @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2.5 text-sm font-semibold text-rose-700 hover:bg-rose-100; }
+  .input { @apply mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm shadow-inner; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
